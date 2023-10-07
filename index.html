@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="./logo.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Excel</title>
+</head>
+
+<body>
+
+    <div class="banner">
+        <div class="banner-text">File</div>
+        <div class="banner-text selected-banner-text">Home</div>
+        <div class="banner-text">Insert</div>
+        <div class="banner-text">Layout</div>
+        <div class="banner-text">Help</div>
+    </div>
+    <div class="cellFunctions">
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <span title="Hold Ctrl to select cells" class="material-icons copy">
+                content_copy
+            </span>
+            <span title="Hold Ctrl to select cells" class="material-icons cut">
+                content_cut
+            </span>
+            <span class="material-icons paste">
+                content_paste
+            </span>
+            <select class="fontFamilySelector">
+                <option value="monospace">MonoSpace</option>
+                <option value="sans-serif">Sans-serif</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="cursive">Cursive</option>
+            </select>
+            <select class="fontSizeSelector">
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+        <div>
+            <span class="material-icons bold">
+                format_bold
+            </span>
+            <span class="material-icons italic">
+                format_italic
+            </span>
+            <span class="material-icons underline">
+                format_underlined
+            </span>
+            <span class="left material-icons alignElement">
+                format_align_left
+            </span>
+            <span class="center material-icons alignElement">
+                format_align_center
+            </span>
+            <span class="right material-icons alignElement">
+                format_align_right
+            </span>
+        </div>
+        <div style="display: flex; gap: 20px;">
+            <div style="display: flex;gap: 10px;">
+                <div class="colorSelect">
+                    <span class="material-icons">
+                        format_color_text
+                    </span>
+                    <input type="color" class="font-color-prop">
+                </div>
+                <div class="colorSelect">
+                    <span class="material-icons">
+                        format_color_fill
+                    </span>
+                    <input type="color" class="BGcolor-prop">
+                </div>
+            </div>
+            <span class="material-icons download">
+                cloud_download
+            </span>
+            <span class="material-icons open">
+                cloud_upload
+            </span>
+            <button id="analyze"><a href="#buttonSection">Analyze Data</a> </button>
+            <button id="clear-cell">clear cell</button>
+        </div>
+    </div>
+    <div class="formula-container">
+        <input type="text" readonly class="address-bar">
+        <img class="formula-icon" src="https://img.icons8.com/ios/50/000000/formula-fx.png" />
+        <input placeholder="Input calculations(* , / , + , -)" type="text" class="formula-bar">
+    </div>
+    <div class="grid-container">
+        <div class="Serial-No"></div>
+        <div class="address-col-container"></div>
+        <div class="cells-container">
+            <div class="address-row-cont"></div>
+        </div>
+    </div>
+    <div class="sheet-section">
+        <div class="sheet-add-icon">
+            <span class="material-icons">
+                post_add
+            </span>
+        </div>
+        <div class="sheets-folder-container">
+
+        </div>
+    </div>
+
+
+    <div id="analysis-container">
+        <h2>Analyze Data</h2>
+        <div id="container">
+            <input type="text" name="search" id="search" placeholder="search">
+            <button onclick="searchData()" class="btn">Search</button>
+        </div>
+        <div id="buttonSection">
+            <button onclick="addTable()" id="addTable">Add Data</button>
+            <button onclick="sortValueAZ()" id="A-Z">sort value A-Z</button>
+            <button onclick="sortValueZA()" id="Z-A">sort value Z-A</button>
+            <button onclick="filterBold()" id="filter-bold">filter bold</button>
+            <button onclick="filterItalic()" id="filter-italic">filter italic</button>
+        </div>
+    </div>
+    </div>
+    <div id="table">
+        <table>
+            <thead>
+                <th>Value</th>
+                <th>isBold</th>
+                <th>isItalic</th>
+                <th>font Family</th>
+                <th>font size</th>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

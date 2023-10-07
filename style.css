@@ -1,0 +1,340 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    height: 50px;
+    background-color: darkgreen;
+    display: flex;
+    align-items: end;
+    padding-left: 16px;
+}
+
+.banner-text {
+    width: 56px;
+    height: 32px;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected-banner-text {
+    background-color: lightgray;
+    color: black;
+}
+
+.cellFunctions {
+    height: fit-content;
+    background-color: lightgray;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-left: 16px;
+}
+
+.cellFunctions>* {
+    display: inline-block;
+    padding: 10px;
+    border-right: 1px solid gray;
+}
+
+.cellFunctions>*:hover {
+    cursor: pointer;
+}
+
+.cellFunctions>select {
+    border: none;
+    border-radius: 2px;
+    outline: none;
+}
+
+.fontFamilySelector {
+    padding: 5px;
+    height: 30px;
+}
+
+.fontSizeSelector {
+    padding: 3.2px;
+}
+
+.formula-container {
+    height: 32px;
+    background-color: lightgray;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.formula-container>* {
+    display: inline-block;
+    margin-right: 11.2px;
+}
+
+.formula-container>input {
+    border: none;
+    outline: none;
+    height: 70%;
+}
+
+.address-bar {
+    width: 80px;
+    text-align: center;
+}
+
+.formula-icon {
+    width: 19.2px;
+}
+
+.formula-bar {
+    width: 100%;
+}
+
+.sheet-section {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding-inline: 8px;
+    gap: 1;
+    background-color: white;
+}
+
+.sheet-section>* {
+    display: inline-block;
+}
+
+.sheet-add-icon {
+    width: 2vw;
+    margin: 10px;
+}
+
+.sheet-add-icon:hover {
+    cursor: pointer;
+}
+
+.sheets-folder-container {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: 80px;
+    width: calc(100vw - 2vw);
+    overflow: auto;
+    margin: 5px;
+}
+
+.sheet-folder {
+    height: 80%;
+    text-decoration: underline;
+    font-weight: bold;
+    text-decoration-thickness: 3px;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sheet-folder:hover {
+    cursor: pointer;
+}
+
+.sheet-content {
+    width: 80px;
+}
+
+.grid-container {
+    height: calc(100vh - 48px - 48px - 32px - 48px);
+    position: relative;
+    overflow: scroll;
+    background-color: white;
+}
+
+.Serial-No {
+    height: 32px;
+    width: 32px;
+    background-color: #747d8c;
+    position: sticky;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+}
+
+.address-col-container {
+    position: sticky;
+    top: 32px;
+    left: 0;
+}
+
+.address-row-cont {
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 32px;
+    background-color: lightgray;
+}
+
+
+.cells-container {
+    position: absolute;
+    top: 0;
+    left: 32px;
+}
+
+.address-col {
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dfe4ea;
+    background-color: lightgray;
+
+}
+
+.address-row {
+    height: 32px;
+    width: 80px;
+    border: 1px solid #dfe4ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-cont {
+    display: flex;
+}
+
+.cell {
+    min-height: 40px;
+    max-height: fit-content;
+    width: 80px;
+    border: 1px solid #dfe4ea;
+    outline: none;
+    overflow-wrap: break-word;
+}
+
+.colorSelect {
+    position: relative;
+}
+
+.colorSelect>input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+#analysis-container {
+    background-color: lightsteelblue;
+    width: 100vw;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+#analysis-container > div > button{
+    width: 80px;
+    height: 40px;
+    background-color: lightgray;
+    border: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#analysis-container > div > button:hover{
+    background-color: gray;
+}
+
+#buttonSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+#buttonSection>button {
+    width: 80px;
+    height: 40px;
+    background-color: lightgray;
+    border: transparent;
+    border-radius: 10px;
+}
+#buttonSection>button:hover{
+    background-color: gray;
+}
+
+#container {
+    width: 80vw;
+    display: flex;
+    gap: 10px;
+    margin: 20px 40px;
+    align-items: center;
+}
+
+#search {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #000000;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: left;
+    color: black;
+    background: linear-gradient(0deg, #D9D9D9, #D9D9D9);
+}
+
+table {
+    align-self: start;
+    border-collapse: collapse;
+    width:95vw;
+    margin: 20px auto;
+    height: 65px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+
+table,
+td,
+th {
+    border: 1px solid black;
+}
+
+td,
+th {
+    padding: 10px;
+    text-align: center;
+    vertical-align: center;
+}
+#clear-cell,#analyze{
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+#clear-cell:hover,#analyze:hover{
+background-color: gray;
+}
+
+@media screen and (max-width:767px) {
+    .cellFunctions{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .cellFunctions>*{
+        border: none;
+    }
+}
