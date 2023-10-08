@@ -210,7 +210,7 @@ body {
 }
 
 .cell {
-    min-height: 40px;
+    min-height: 32px;
     max-height: fit-content;
     width: 80px;
     border: 1px solid #dfe4ea;
